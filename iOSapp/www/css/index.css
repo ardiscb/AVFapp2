@@ -1,3 +1,8 @@
+/*
+Courtney Ardis
+AVF 1302
+Demo App 1
+*/
 *{  
     margin:0;  
     padding:0;  
@@ -9,8 +14,21 @@ body{
     font-family:arial,sans-serif;  
     font-size:100%;  
     margin:1em;     
-}  
-
+}
+/*inset the title*/  
+h1{
+    color: #663300;
+    text-shadow:#fff 0px 1px 0, #000 0 -1px 0;
+    font-size: 50px;
+}
+/*style the twitter logo*/
+img#twitter{
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 2px rgba(33,33,33,1);
+}
+/*style native feature links as sticky notes*/
 section#native ul li h2{  
   font-size:140%;  
   font-weight:bold;  
@@ -27,11 +45,18 @@ h2,p{
 }  
 section#native ul,li{  
     list-style:none;  
+    text-align: center;
+
 }  
 section#native ul{  
     overflow:hidden;  
-    padding:2em;  
+    padding:2em;
+
 }  
+section#native ul li{  
+    margin:1em;  
+    float:left;  
+} 
 section#native ul li a{  
     text-decoration:none;  
     color:#000;  
@@ -65,8 +90,16 @@ section#native ul li:nth-child(3n) a{
 }
 section#native ul li:nth-child(4n) a{
     background-color: #ADEAEA;
+} 
+/*style research links */
+section#research ul li, section#api ul li{
+    text-align: center;
+    padding:1em;
+    margin:0em 1em;
 }
-section#native ul li{  
-    margin:1em;  
-    float:left;  
-}  
+/*align footer text*/
+footer{
+    color:#404040;
+    font-weight: bold;
+    text-align: center;
+}
