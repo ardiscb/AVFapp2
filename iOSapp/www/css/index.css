@@ -106,7 +106,7 @@ section#research ul li, section#api ul li{
     margin:0em 1em;
 }
 /*align footer text*/
-footer{
+footer small p{
     color:#404040;
     font-weight: bold;
     text-align: center;

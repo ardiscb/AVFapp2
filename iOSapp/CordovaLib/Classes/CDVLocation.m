@@ -478,7 +478,7 @@
 - (void)startHeadingWithFilter:(CLLocationDegrees)filter
 {
     if ([self.locationManager respondsToSelector:@selector(headingOrientation)]) {
-        UIDeviceOrientation currentOrientation = [[UIDevice currentDevice] orientation];
+        UIInterfaceOrientation currentOrientation = [[UIApplication sharedApplication] statusBarOrientation];
         if (currentOrientation != UIDeviceOrientationUnknown) {
             CDVViewController* cdvViewController = (CDVViewController*)self.viewController;
 
