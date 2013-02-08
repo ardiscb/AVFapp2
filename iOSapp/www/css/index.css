@@ -21,8 +21,8 @@ h1{
     text-shadow:#fff 0px 1px 0, #000 0 -1px 0;
     font-size: 50px;
 }
-/*style the twitter logo*/
-img#twitter{
+/*style the twitter and facebook logo*/
+#twitter, #facebook{
     width: 64px;
     height: 64px;
     border-radius: 15px;
@@ -91,6 +91,14 @@ section#native ul li:nth-child(3n) a{
 section#native ul li:nth-child(4n) a{
     background-color: #ADEAEA;
 } 
+section#research ul{
+    padding: 30px;
+    background: url(../img/tornPaper.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
 /*style research links */
 section#research ul li, section#api ul li{
     text-align: center;
