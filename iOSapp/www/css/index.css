@@ -1,19 +1,17 @@
 /*
 Courtney Ardis
 AVF 1302
-Demo App 1
+Demo App 2
 */
 *{  
     margin:0;  
     padding:0;  
 }  
-body{  
+#home{  
     background: url("../img/corkboard.jpg");
-    background-position: center;
     background-repeat: no-repeat;
     font-family:arial,sans-serif;  
     font-size:100%;  
-    margin:1em;     
 }
 /*inset the title*/  
 h1{
@@ -21,12 +19,15 @@ h1{
     text-shadow:#fff 0px 1px 0, #000 0 -1px 0;
     font-size: 50px;
 }
-/*style the twitter and facebook logo*/
-#twitter, #facebook{
+/*style the twitter and github logo*/
+#twitter, #github{
     width: 64px;
     height: 64px;
     border-radius: 15px;
     box-shadow: 2px 4px 2px rgba(33,33,33,1);
+}
+#github{
+    background-color: white;
 }
 /*style native feature links as sticky notes*/
 section#native ul li h2{  
@@ -110,4 +111,13 @@ footer small p{
     color:#404040;
     font-weight: bold;
     text-align: center;
+}
+
+
+/*Phone*/
+@media screen and (max-device-width: 480px) {
+    html{
+        background-image: url(../img/corkboard_phone.jpg);
+        background-attachment: scroll;
+    }
 }
