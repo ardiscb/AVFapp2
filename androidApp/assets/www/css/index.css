@@ -1,19 +1,17 @@
 /*
 Courtney Ardis
 AVF 1302
-Demo App 1
+Demo App 2
 */
 *{  
     margin:0;  
     padding:0;  
 }  
-body{  
+#home{  
     background: url("../img/corkboard.jpg");
-    background-position: center;
     background-repeat: no-repeat;
     font-family:arial,sans-serif;  
     font-size:100%;  
-    margin:1em;     
 }
 /*inset the title*/  
 h1{
@@ -21,12 +19,15 @@ h1{
     text-shadow:#fff 0px 1px 0, #000 0 -1px 0;
     font-size: 50px;
 }
-/*style the twitter and facebook logo*/
-#twitter, #facebook{
+/*style the twitter and github logo*/
+#twitter, #github{
     width: 64px;
     height: 64px;
     border-radius: 15px;
     box-shadow: 2px 4px 2px rgba(33,33,33,1);
+}
+#github{
+    background-color: white;
 }
 /*style native feature links as sticky notes*/
 section#native ul li h2{  
@@ -35,7 +36,7 @@ section#native ul li h2{
   padding-bottom:10px;  
 }  
 section#native ul li p{  
-  font-family:"Lucida Handwriting",arial,sans-serif;  
+  font-family:Lucida,arial,sans-serif;  
   font-size:110%;  
 }
 
@@ -46,22 +47,21 @@ h2,p{
 section#native ul,li{  
     list-style:none;  
     text-align: center;
-
 }  
 section#native ul{  
     overflow:hidden;  
-    padding:2em;
-
+    padding-bottom:1em;
 }  
-section#native ul li{  
+section#native ul li, section#research ul li{  
     margin:1em;  
-    float:left;  
+    display:inline-block;
+    text-align: center; 
 } 
 section#native ul li a{  
     text-decoration:none;  
     color:#000;  
     background:#ffc;  
-    display:block;  
+    display:inline-block;  
     height:10em;  
     width:10em;  
     padding:1em; 
@@ -96,18 +96,70 @@ section#research ul{
     background: url(../img/tornPaper.png);
     background-position: center;
     background-repeat: no-repeat;
-
+    overflow:hidden; 
+    padding-bottom:2em; 
 }
-
+section#research{
+    text-align: center;
+}
 /*style research links */
 section#research ul li, section#api ul li{
     text-align: center;
     padding:1em;
     margin:0em 1em;
 }
+/*style video*/
+video {
+    margin: 0px auto;
+    height:360;
+    width: 640;
+    display: block;
+    padding-top:2em;
+    padding-bottom: 1em;
+}
+/*style images*/
+img{
+    max-width: 100%;
+}
 /*align footer text*/
 footer small p{
     color:#404040;
     font-weight: bold;
     text-align: center;
+}
+
+/*Phone screens 480x320*/
+@media screen and (max-device-width: 480px) {
+    /*scrolls background*/
+    html{
+        background-attachment: scroll;
+    }
+    /*changes display of research li*/
+    section#research ul li{ 
+    display:inline;
+    margin: 0;
+    }
+    /*stretch images to 100% of the screen*/
+    img{
+        max-width: 100%;
+    }
+    /*changes display of native links;
+    makes the sticky notes smaller*/
+    section#native ul li a{
+        width:5.5em;
+        height:5.5em;
+    }
+    /*changes font of sticky notes headers*/
+    section#native ul li h2{  
+        font-size:105%;  
+    }  
+    /*changes the font of the sticky note description*/
+    section#native ul li p{  
+        font-size:90%;  
+    }
+    /*changes the background image for the research section
+    to be 100% of the device's width*/
+    section#research ul{
+        background-size: 100%;
+    }
 }

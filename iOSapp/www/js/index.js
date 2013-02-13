@@ -43,10 +43,13 @@ $('#githubPage').on('pageinit', function(){
             console.log(data);      
             for (i=0, j=data.length; i<j; i++){
                 $("" +
-                    "<li>" +                
-                    "<p class='jobsP'>" + data[i].location + "</p>" +              
-                    "<a id='jobsA' href=''>" + data[i].company + "</a>" +              
-                    "<p class='jobsP'>" + data[i].description + "</p>" +               
+                    "<li>" +
+                    "<p>Position Title: " + data[i].title + "</p>" +                
+                    "<p>Location: " + data[i].location + "</p>" +              
+                    "<p>Company: " + data[i].company + "</p>" + 
+                    // "<a href=''>" + data[i].company_url + "</a>" +             
+                    "<p>Job Description: " + data[i].description + "</p>" +
+                    "<p>How to Apply:" + data[i].how_to_apply + "</p>" +               
                     "</li><hr />"           
                 ).appendTo("#githubJobs");     
             }   

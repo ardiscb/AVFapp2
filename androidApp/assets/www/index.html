@@ -2,86 +2,127 @@
 <!--
 Courtney Ardis
 AVF 1302
-Demo App 1
+Demo App 2
 -->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+
         <title>Prorganizer</title>
     </head>
     <body>
-        <!--Logo and title-->
-        <header>
-            <h1>Prorganizer</h1>
+        <!--Home page-->
+        <div data-role="page" id="home">
+            <!--Logo and title-->
+            <header>
+                <h1>Prorganizer</h1>
+            </header>
 
-        </header>
+            <!--Native Features links-->
+            <section id="native">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <h2>Camera</h2>
+                            <p>Describe what this feature will do</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h2>Geolocation</h2>
+                            <p>Describe what this feature will do</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h2>Media</h2>
+                            <p>Describe what this feature will do</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h2>Contacts</h2>
+                            <p>Describe what this feature will do</p>
+                        </a>
+                    </li>
+                <ul>
+            </section>
 
-        <!--Native Features-->
-        <section id="native">
-            <ul>
-                <li>
-                    <a href="#">
-                        <h2>Camera</h2>
-                        <p>Describe what this feature will do</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h2>Geolocation</h2>
-                        <p>Describe what this feature will do</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h2>Media</h2>
-                        <p>Describe what this feature will do</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h2>Contacts</h2>
-                        <p>Describe what this feature will do</p>
-                    </a>
-                </li>
-            <ul>
-        </section>
+            <!--Research links-->
+            <section id="research">
+                <ul>
+                    <li>
+                        <a href="#">Week 1</a>
+                    </li>
+                    <li> 
+                        <a href="#">Week 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Week 3</a>
+                    </li>
+                </ul>
+            </section>
 
-        <!--Research-->
-        <section id="research">
-            <ul>
-                <li>
-                    <a href="#">Week 1</a><span> | </span> 
-                    <a href="#">Week 2</a><span> | </span>
-                    <a href="#">Week 3</a>
-                </li>
-            </ul>
-        </section>
+            <!--Video section-->
+            <section>
+                <video preload controls>
+                    <source src="video/AVF2_Short.mp4" type='video/mp4; codecs=avc1.42E01E, mp4a.40.2'>
+                    <source src="video/AVF2_Short.webm" type='video/webm; codecs=vp8, vorbis'>
+                    <source src="video/AVF2_Short.oggtheora.ogv" type='video/ogg; codecs=theora, vorbis'>
+                </video>
+            </section>
+            <!--END Video section-->
 
-        <!--API-->
-        <section id="api">
-            <ul>
-                <li>
-                    <img src="img/twitterLogo.png" alt="twitter" id="twitter"/>
-                    <img id ="facebook" src="img/f_logo.jpg" />
-                </li>
-            </ul>
-        </section>
+            <!--API image links-->
+            <section id="api">
+                <ul>
+                    <li>
+                        <!--Twitter access-->
+                        <a id="twitterBtn" href="#twitterPage"><img src="img/twitterLogo.png" alt="twitter" id="twitter"/></a>
+                        <!--GitHub Jobs access-->
+                        <a id="githubBtn" href="#githubPage"><img src="img/github-icon.png" id ="github" alt="gitHub" /></a>
+                    </li>
+                </ul>
+            </section>
+            <!--Footer information-->
+            <footer>
+                <small>
+                <p>Courtney Ardis</p>
+                <p>AVF 1302</p>
+                </small>
+            </footer>
+        </div>
+        <!--END Home page-->
 
-        <footer>
-            <small>
-            <p>Courtney Ardis</p>
-            <p>AVF 1302</p>
-            </small
-        </footer>
+        <!--Twitter page -->
+        <div data-role="page" id="twitterPage">
+            <section id="feed">                
+                <ul id="twitterFeed">
+                </ul>
+           </section>
+        </div>
+        <!--END Twitter page-->
 
+        <!--GitHub Jobs page-->
+        <div data-role="page" id="githubPage">
+            <section id="jobs">                
+                <ul id="githubJobs">
+                </ul>
+           </section>
+        </div>
+        <!--END GitHub Jobs page-->
+
+        <!--jQuery-->
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <!--jQuery Mobile-->
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <!--Cordova-->
         <script type="text/javascript" src="cordova-2.3.0.js"></script>
+        <!--Javascript file-->
         <script type="text/javascript" src="js/index.js"></script>
-        <!--<script type="text/javascript" >-->
-        </script>
     </body>
 </html>
