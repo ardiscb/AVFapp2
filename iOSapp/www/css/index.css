@@ -128,8 +128,16 @@ footer small p{
     text-align: center;
 }
 
+/*Landscape view*/
+@media all and (orientation: landscape){
+    body{width: 10%;}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+}
 /*Phone screens 480x320*/
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 720px) {
     /*scrolls background*/
     html{
         background-attachment: scroll;
