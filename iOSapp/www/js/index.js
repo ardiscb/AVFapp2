@@ -1,6 +1,13 @@
 //Courtney Ardis
 //AVF 1302
 //Demo App 2
+
+var onDeviceReady = function(){
+}
+
+//Cordova ready
+document.addEventListener("deviceready", onDeviceReady, false);
+
 $('#home').on('pageinit', function(){
     //code needed for home page goes here
 

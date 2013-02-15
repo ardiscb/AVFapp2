@@ -39,7 +39,7 @@ section#native ul li p{
   font-family:Lucida,arial,sans-serif;  
   font-size:110%;  
 }
-
+/*style headers and paragraphs of pages*/
 h2,p{  
     font-size:100%;  
     font-weight:normal;  

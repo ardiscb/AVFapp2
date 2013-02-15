@@ -1,13 +1,16 @@
 //Courtney Ardis
 //AVF 1302
 //Demo App 2
+
+var onDeviceReady = function(){
+}
+
+//Cordova ready
+document.addEventListener("deviceready", onDeviceReady, false);
+
 $('#home').on('pageinit', function(){
     //code needed for home page goes here
-    //Video playback
-    var video = $('<video>');
-    video.on('click',function(){
-        video.play();
-    },false);
+
 });
 
 $('#twitterPage').on('pageinit', function(){
@@ -48,10 +51,12 @@ $('#githubPage').on('pageinit', function(){
             for (i=0, j=data.length; i<j; i++){
                 $("" +
                     "<li>" +
-                    "<p>" + data[i].title + "</p>" +                
-                    "<p class='jobsP'>" + data[i].location + "</p>" +              
-                    "<a id='jobsA' href=''>" + data[i].company + "</a>" +              
-                    "<p class='jobsP'>" + data[i].description + "</p>" +               
+                    "<p>Position Title: " + data[i].title + "</p>" +                
+                    "<p>Location: " + data[i].location + "</p>" +              
+                    "<p>Company: " + data[i].company + "</p>" + 
+                    // "<a href=''>" + data[i].company_url + "</a>" +             
+                    "<p>Job Description: " + data[i].description + "</p>" +
+                    "<p>How to Apply:" + data[i].how_to_apply + "</p>" +               
                     "</li><hr />"           
                 ).appendTo("#githubJobs");     
             }   
