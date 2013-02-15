@@ -148,10 +148,6 @@ footer small p{
 @media all and (orientation: landscape){
     body{width: 10%;}
 }
-
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-
-}
 /*Phone screens 480x320*/
 @media screen and (max-device-width: 720px) {
     /*scrolls background*/
