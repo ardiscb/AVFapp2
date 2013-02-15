@@ -55,7 +55,7 @@ Demo App 2
             <section id="research">
                 <ul>
                     <li>
-                        <a href="#">Week 1</a>
+                        <a href="#researchPage">Week 1</a>
                     </li>
                     <li> 
                         <a href="#">Week 2</a>
@@ -97,8 +97,11 @@ Demo App 2
         </div>
         <!--END Home page-->
 
-        <!--Twitter page -->
+        <!--Twitter page-->
         <div data-role="page" id="twitterPage">
+            <header>
+                <h1>Mobile Development</h1>
+            </header>
             <section id="feed">                
                 <ul id="twitterFeed">
                 </ul>
@@ -108,12 +111,35 @@ Demo App 2
 
         <!--GitHub Jobs page-->
         <div data-role="page" id="githubPage">
+            <header>
+                <h1>GitHub Job Listing</h1>
+            </header>
             <section id="jobs">                
                 <ul id="githubJobs">
                 </ul>
             </section>
         </div>
         <!--END GitHub Jobs page-->
+
+        <!--Research Page-->
+        <div data-role="page" id="researchPage">
+            <header>
+                <h1>Data Research, Project Intent</h1>
+            </header>
+            <section>
+                <p>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</p>
+                <p>Since payments are more secure when logged into accounts such as Twitter, using the oAuth to validate a person’s identity is a great perk when dealing with payments within an app.</p>
+                <p>Visit Programmableweb.com and search for JSON&dash;P data sources. Why would we need JSON&dash;P, specifically?</p>
+                <p>We need JSON&dash;P to talk to the APIs, such as Twitter. An AJAX call pulls in the Twitter feed to the app. JSON-P is used specifically for cross-platform applications.</p>
+                <p>Based on the JSON&dash;P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
+                <p>I think a good mash-up would be with the Contacts native feature and the GitHub Jobs API. It would be great to allow a user to add a GitHub job contact from the GitHub job list page.</p>
+                <p>Please describe any design and functionality intentions you may have for your Demo app components this month.</p>
+                <p>I have designed the demo app to be somewhat of an app for organizing different tasks or functions. I want to implement Media, so the user can record audio files, such as quick to-do voice reminders. I also plan to implement Geolocation, Contacts, and Camera native features.</p>
+                <p>Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.</p>
+                <p>I&apos;ve learned to get the functionality of things working first and then work on the detailed styles or extra features later. I’ve also started drawing out on paper a rough sketch of how I want each application laid out.</p>
+            </section>
+        </div>
+        <!--END Research Page-->
 
         <!--jQuery-->
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
