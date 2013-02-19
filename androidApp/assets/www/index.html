@@ -25,9 +25,9 @@ Demo App 2
             <section id="native">
                 <ul>
                     <li>
-                        <a href="#">
-                            <h2>Camera</h2>
-                            <p>Describe what this feature will do</p>
+                        <a href="#" id="capture">
+                            <h2>Capture</h2>
+                            <p>Take a picture with your camera</p>
                         </a>
                     </li>
                     <li>
@@ -43,7 +43,7 @@ Demo App 2
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#contactsPage">
                             <h2>Contacts</h2>
                             <p>Add Contacts to your device</p>
                         </a>
@@ -69,7 +69,6 @@ Demo App 2
             <!--Video section-->
             <section>
                 <video preload controls>
-                    <!--Video will not load on Android Emulator or Android device-->
                     <source src="video/AVF2_Short.mp4" type='video/mp4; codecs=avc1.42E01E, mp4a.40.2'>
                     <source src="video/AVF2_Short.webm" type='video/webm; codecs=vp8, vorbis'>
                     <source src="video/AVF2_Short.oggtheora.ogv" type='video/ogg; codecs=theora, vorbis'>
@@ -98,12 +97,33 @@ Demo App 2
         </div>
         <!--END Home page-->
 
+        <!--Contacts page-->
+        <div data-role="page" id="contactsPage">
+            <header>
+                <h1>Add a Contact</h1>
+            </header>
+            <section>
+                <form action="#" method="post">
+                    <ul>
+                        <li><label for="firstName">First Name:</label><input type="text" id="firstName" /></li>
+                        <li><label for="lastName">Last Name:</label><input type="text" id="lastName" /></li>
+                        <li><label for="email">Email:</label><input type="text" id="email" /></li>
+                        <li><label for="phone">Phone #:</label><input type="text" id="phone" /></li>
+                        <li><button type="button" id="addContact">Add Contact</button></li>
+                    </ul>
+                </form>
+            </section>
+        </div>
+        <!--END Contacts page-->
+
         <!--Twitter page-->
         <div data-role="page" id="twitterPage">
             <header>
                 <h1>Mobile Development</h1>
             </header>
             <section id="feed">
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" />
                 <ul id="twitterFeed">
                 </ul>
             </section>
@@ -116,6 +136,8 @@ Demo App 2
                 <h1>GitHub Job Listing</h1>
             </header>
             <section id="jobs">
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" /> 
                 <ul id="githubJobs">
                 </ul>
             </section>
@@ -128,6 +150,8 @@ Demo App 2
                 <h1>Data Research, Project Intent</h1>
             </header>
             <section>
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" />
                 <p>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</p>
                 <p>Since payments are more secure when logged into accounts such as Twitter, using the oAuth to validate a person’s identity is a great perk when dealing with payments within an app.</p>
                 <p>Visit Programmableweb.com and search for JSON&dash;P data sources. Why would we need JSON&dash;P, specifically?</p>

@@ -7,7 +7,7 @@ Demo App 2
     margin:0;  
     padding:0;  
 }  
-#home, #researchPage, #twitterPage, #githubPage{  
+#home, #researchPage, #twitterPage, #githubPage, #contacts{  
     background: url("../img/corkboard.jpg");
     background-repeat: repeat;
     font-family:arial,sans-serif;  
@@ -109,13 +109,13 @@ section#research ul li, section#api ul li{
     margin:0em 1em;
 }
 /*style twitter, research and github page background*/
-#twitterPage section, #researchPage section, #githubPage section{
+#twitterPage section, #researchPage section, #githubPage section, #contacts section{
     margin: 20px;
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.5);
     border:1px solid black;
 }
-#twitterPage li, #githubPage li{
+#twitterPage li, #githubPage li, #contacts li{
     text-align: left;
     padding: 2px;
 }
