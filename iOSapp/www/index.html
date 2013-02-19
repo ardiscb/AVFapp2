@@ -25,9 +25,9 @@ Demo App 2
             <section id="native">
                 <ul>
                     <li>
-                        <a href="#">
-                            <h2>Camera</h2>
-                            <p>Describe what this feature will do</p>
+                        <a href="#" id="capture">
+                            <h2>Capture</h2>
+                            <p>Take a picture with your camera</p>
                         </a>
                     </li>
                     <li>
@@ -43,7 +43,7 @@ Demo App 2
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#contactsPage">
                             <h2>Contacts</h2>
                             <p>Add Contacts to your device</p>
                         </a>
@@ -96,6 +96,25 @@ Demo App 2
             </footer>
         </div>
         <!--END Home page-->
+
+        <!--Contacts page-->
+        <div data-role="page" id="contactsPage">
+            <header>
+                <h1>Add a Contact</h1>
+            </header>
+            <section>
+                <form action="#" method="post">
+                    <ul>
+                        <li><label for="firstName">First Name:</label><input type="text" id="firstName" /></li>
+                        <li><label for="lastName">Last Name:</label><input type="text" id="lastName" /></li>
+                        <li><label for="email">Email:</label><input type="text" id="email" /></li>
+                        <li><label for="phone">Phone #:</label><input type="text" id="phone" /></li>
+                        <li><button type="button" id="addContact">Add Contact</button></li>
+                    </ul>
+                </form>
+            </section>
+        </div>
+        <!--END Contacts page-->
 
         <!--Twitter page-->
         <div data-role="page" id="twitterPage">
