@@ -15,7 +15,7 @@ var onDeviceReady = function(){
 //Cordova ready
 document.addEventListener("deviceready", onDeviceReady, false);
 
-//Geolocation Page
+//Geolocation
 var onSuccess = function(position){
     console.log("in success");
     var city = $("#city").attr("value");
