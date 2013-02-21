@@ -31,9 +31,9 @@ Demo App 2
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#geoPage">
                             <h2>Geolocation</h2>
-                            <p>Describe what this feature will do</p>
+                            <p>Check out a map of where you are now</p>
                         </a>
                     </li>
                     <li>
@@ -115,6 +115,22 @@ Demo App 2
             </section>
         </div>
         <!--END Contacts page-->
+
+        <!--Geolocation page-->
+        <div data-role="page" id="geoPage">
+            <header>
+                <h1>Geolocation</h1>
+            </header>
+            <section id="geo">
+                <ul>
+                    <li><label for="city">City:</label><input type="text" id="city" /></li>
+                    <li><label for="state">State:</label><input type="text" id="state" /></li>
+                    <li><button type="button" id="getLocationBtn">Get Location</button></li>
+                </ul>
+<!--                 <img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=400x400&maptype=hybrid&sensor=false" />
+ -->            </section>
+        </div>
+        <!--END Geolocation page-->
 
         <!--Twitter page-->
         <div data-role="page" id="twitterPage">
