@@ -3,6 +3,9 @@
 //Demo App 2
 
 var onDeviceReady = function(){
+    $("#getLocationBtn").click(function(){
+        navigator.geolocation.getCurrentPosition(onSuccess, error, {enableHighAccuracy : true});
+    });
     $("#capture").click(function() {
         imageCapture();
     });
@@ -12,8 +15,30 @@ var onDeviceReady = function(){
 //Cordova ready
 document.addEventListener("deviceready", onDeviceReady, false);
 
-//onReady function - do everything else
-var onReady = function(){
+//Geolocation Page
+var onSuccess = function(position){
+    console.log("in success");
+    var city = $("#city").attr("value");
+    var state = $("#state").attr("value");
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var accuracy = position.coords.accuracy;
+    console.log(latitude);
+    console.log(longitude);
+    // $("#geo img").remove(); 
+    $("#geo").append(
+        "<img width='100%' height='100%' src='http://maps.googleapis.com/maps/api/staticmap?center=" + city + "," + state + "&zoom=10&size=600x300&maptype=roadmap&markers=color:green|" + latitude + "," + longitude + "&sensor=false'/>" + 
+        '<p>Latitude: ' + latitude + '</p>' +
+        '<p>Longitude: ' + longitude + '</p>' +
+        '<p>Accuracy: ' + accuracy + 'm</p>'
+    );
+    console.log("after append");
+}
+var error = function(error){
+    alert("Geolocation Error Message: " + error.message + " Error Code: " + error.code);
+}
+//onReady function - does everything else
+var onReady = function(position){
     $('#home').on('pageinit', function(){
         //code needed for home page goes here
 
@@ -47,7 +72,9 @@ var onReady = function(){
         console.log("after save, in click even for add contact");
         });
     });
-
+    
+    
+    //Twitter Page
     $('#twitterPage').on('pageinit', function(){
         console.log("I've gotten to the twitter page");
         console.log("Starting JSON");
@@ -73,7 +100,8 @@ var onReady = function(){
         }
         });
     }); 
-
+    
+    //GitHub Job Listing Page
     $('#githubPage').on('pageinit', function(){
         console.log("I've gotten to the github page");
         console.log("Starting JSON");

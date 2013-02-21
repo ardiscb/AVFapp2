@@ -7,7 +7,7 @@ Demo App 2
     margin:0;  
     padding:0;  
 }  
-#home, #researchPage, #twitterPage, #githubPage, #contacts{  
+#home, #researchPage, #twitterPage, #githubPage, #contacts, #geoPage{  
     background: url("../img/corkboard.jpg");
     background-repeat: repeat;
     font-family:arial,sans-serif;  
@@ -108,14 +108,18 @@ section#research ul li, section#api ul li{
     padding:1em;
     margin:0em 1em;
 }
-/*style twitter, research and github page background*/
-#twitterPage section, #researchPage section, #githubPage section, #contacts section{
+/*style values on geolocation page*/
+#geo section p{
+    
+}
+/*style twitter, research and github page opaque overlayed background*/
+#twitterPage section, #researchPage section, #githubPage section, #contacts section, #geo{
     margin: 20px;
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.5);
     border:1px solid black;
 }
-#twitterPage li, #githubPage li, #contacts li{
+#twitterPage li, #githubPage li, #contacts li, #geo li{
     text-align: left;
     padding: 2px;
 }
