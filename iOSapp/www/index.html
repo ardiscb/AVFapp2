@@ -37,9 +37,9 @@ Demo App 2
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <h2>Media</h2>
-                            <p>Record audio reminders</p>
+                        <a href="#" id="network">
+                            <h2>Connection</h2>
+                            <p>Check your network connection status</p>
                         </a>
                     </li>
                     <li>
@@ -103,8 +103,11 @@ Demo App 2
                 <h1>Add a Contact</h1>
             </header>
             <section>
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" />
                 <form action="#" method="post">
                     <ul>
+                        <li><p>Please enter contact information in the fields below</p></li>
                         <li><label for="firstName">First Name:</label><input type="text" id="firstName" /></li>
                         <li><label for="lastName">Last Name:</label><input type="text" id="lastName" /></li>
                         <li><label for="email">Email:</label><input type="text" id="email" /></li>
@@ -122,13 +125,14 @@ Demo App 2
                 <h1>Geolocation</h1>
             </header>
             <section id="geo">
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" />
                 <ul>
                     <li><label for="city">City:</label><input type="text" id="city" /></li>
                     <li><label for="state">State:</label><input type="text" id="state" /></li>
                     <li><button type="button" id="getLocationBtn">Get Location</button></li>
                 </ul>
-<!--                 <img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=400x400&maptype=hybrid&sensor=false" />
- -->            </section>
+            </section>
         </div>
         <!--END Geolocation page-->
 
