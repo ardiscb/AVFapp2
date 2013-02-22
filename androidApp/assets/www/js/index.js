@@ -9,6 +9,9 @@ var onDeviceReady = function(){
     $("#capture").click(function() {
         imageCapture();
     });
+    $("#network").click(function() {
+        connectionStatus();
+    });
     onReady();
 }
 
@@ -152,4 +155,49 @@ var imageCapture = function(){
     navigator.device.capture.captureImage(captureImg, captureError, {limit: 1});
 };
 //END Capture
+
+// Native device feature: Connection
+var connectionStatus = function() {
+    // Using depreciated navigator.network.connection because otherwise it doesn't work on Android emulator
+    // Source: https://issues.apache.org/jira/browse/CB-1807
+    // Error in phonegap 2.2.0
+    // Descripton states that using this will result in the correct data type for the emulator
+    var networkState = navigator.network.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+    
+    alert('Connection type: ' + states[networkState]);
+};
+
+// Native device feature: Notification
+// onConnectMsg alert dismissed
+var alertDismissed = function() {
+    //return to index.html
+};
+
+var onConnectMsg = function(networkState) {
+    if (networkState != Connection.NONE || Connection.UNKNOWN){
+        navigator.notification.alert(
+            'You are now connected!',  // message
+            alertDismissed,            // callback
+            'Network Connection',      // title
+            'OK'                       // buttonName
+        );
+    }else{
+        navigator.notification.alert(
+            'Unable to find connection status',  // message
+            alertDismissed,                      // callback
+            'Network Connection',                // title
+            'OK'                                 // buttonName
+        );
+    }
+};
+//END Connection native feature
 

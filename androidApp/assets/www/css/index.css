@@ -7,7 +7,7 @@ Demo App 2
     margin:0;  
     padding:0;  
 }  
-#home, #researchPage, #twitterPage, #githubPage, #contacts, #geoPage{  
+#home, #researchPage, #twitterPage, #githubPage, #contactsPage, #geoPage{  
     background: url("../img/corkboard.jpg");
     background-repeat: repeat;
     font-family:arial,sans-serif;  
@@ -112,8 +112,18 @@ section#research ul li, section#api ul li{
 #geo section p{
     
 }
+#contactsPage form li p{
+    padding: 1.5em;
+    margin: 10px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
+    border:1px dotted black;
+}
+#contactsPage form label{
+    text-align: left;
+}
 /*style twitter, research and github page opaque overlayed background*/
-#twitterPage section, #researchPage section, #githubPage section, #contacts section, #geo{
+#twitterPage section, #researchPage section, #githubPage section, #contactsPage section, #geo{
     margin: 20px;
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.5);
