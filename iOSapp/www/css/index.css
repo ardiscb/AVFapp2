@@ -7,7 +7,7 @@ Demo App 2
     margin:0;  
     padding:0;  
 }  
-#home, #researchPage, #twitterPage, #githubPage, #contactsPage, #geoPage{  
+#home, #researchPage1, #researchPage2, #researchPage3, #twitterPage, #githubPage, #contactsPage, #geoPage{  
     background: url("../img/corkboard.jpg");
     background-repeat: repeat;
     font-family:arial,sans-serif;  
@@ -99,20 +99,21 @@ section#research ul{
     overflow:hidden; 
     padding-bottom:2em; 
 }
-section#research{
-    text-align: center;
-}
 /*style research links */
 section#research ul li, section#api ul li{
     text-align: center;
     padding:1em;
     margin:0em 1em;
 }
+/*align research links*/
+section#research{
+    text-align: center;
+}
 /*style values on geolocation page*/
 #geo section p{
     
 }
-#contactsPage form li p{
+#contactsPage section form li p{
     padding: 1.5em;
     margin: 10px;
     font-weight: bold;
@@ -123,7 +124,7 @@ section#research ul li, section#api ul li{
     text-align: left;
 }
 /*style twitter, research and github page opaque overlayed background*/
-#twitterPage section, #researchPage section, #githubPage section, #contactsPage section, #geo{
+#twitterPage section, section.research, #githubPage section, #contactsPage section, #geo{
     margin: 20px;
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.5);
@@ -134,10 +135,7 @@ section#research ul li, section#api ul li{
     padding: 2px;
 }
 /*style research page*/
-#researchPage p{
-    margin: 20px;
-}
-#researchPage p:nth-child(even){
+#researchPage1 p:nth-child(even), #researchPage2 p:nth-child(even), #researchPage3 p:nth-child(odd){
     font-weight: bold;
 }
 /*style video*/
@@ -152,10 +150,11 @@ img{
     max-width: 100%;
 }
 /*align footer text*/
-footer small p{
+footer p{
     color:#404040;
     font-weight: bold;
     text-align: center;
+    font-size: 10pt;
 }
 
 /*Landscape view*/

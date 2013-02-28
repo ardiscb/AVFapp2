@@ -18,7 +18,7 @@ var onDeviceReady = function(){
 //Cordova ready
 document.addEventListener("deviceready", onDeviceReady, false);
 
-//Geolocation Page
+//Geolocation
 var onSuccess = function(position){
     console.log("in success");
     var city = $("#city").attr("value");
@@ -76,32 +76,35 @@ var onReady = function(position){
         });
     });
     
-    
     //Twitter Page
-    $('#twitterPage').on('pageinit', function(){
+    $('#twitterPage').on('pageinit', function(networkState, states){
         console.log("I've gotten to the twitter page");
-        console.log("Starting JSON");
-        $.ajax({
-        type: "GET",
-        url: "http://search.twitter.com/search.json?q=mobile%20development&callback=?",
-        dataType: "json",
-        success: function(data, response){      
-            console.log(data); 
-            console.log("In the success function");     
-            for (i=0, j=data.results.length; i<j; i++){
-                $("" +
-                    "<li id='tweets'>" +                
-                    "<img src='" + data.results[i].profile_image_url + "' />" +             
-                    "<a href='' id='twitterA'>" + data.results[i].from_user + "</a>" +              
-                    "<p id='twitterP'>" + data.results[i].text + "</p>" +               
-                    "</li><hr />"           
-                ).appendTo("#twitterFeed");     
-            }   
-        },
-        error: function(status, results){
-            console.log(status, results);
+        if(states[networkState] != Connection.UNKNOWN || states[networkState] != Connection.NONE){
+            console.log("Starting JSON");
+            $.ajax({
+            type: "GET",
+            url: "http://search.twitter.com/search.json?q=mobile%20development&callback=?",
+            dataType: "json",
+            success: function(data, response){      
+                console.log(data); 
+                console.log("In the success function");     
+                for (i=0, j=data.results.length; i<j; i++){
+                    $("" +
+                        "<li id='tweets'>" +                
+                        "<img src='" + data.results[i].profile_image_url + "' />" +             
+                        "<a href='' id='twitterA'>" + data.results[i].from_user + "</a>" +              
+                        "<p id='twitterP'>" + data.results[i].text + "</p>" +               
+                        "</li><hr />"           
+                    ).appendTo("#twitterFeed");     
+                }   
+            },
+            error: function(status, results){
+                console.log(status, results);
+            }
+            });
+        }else{
+            alert("Please connect to a network and try again. Example: Wi-Fi");
         }
-        });
     }); 
     
     //GitHub Job Listing Page
@@ -200,4 +203,3 @@ var onConnectMsg = function(networkState) {
     }
 };
 //END Connection native feature
-
