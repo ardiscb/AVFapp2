@@ -8,7 +8,7 @@ Demo App 2
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <title>Prorganizer</title>
@@ -55,13 +55,13 @@ Demo App 2
             <section id="research">
                 <ul>
                     <li>
-                        <a href="#researchPage">Week 1</a>
+                        <a href="#researchPage1">Data Intent</a>
                     </li>
                     <li> 
-                        <a href="#">Week 2</a>
+                        <a href="#researchPage2">Accessibility</a>
                     </li>
                     <li>
-                        <a href="#">Week 3</a>
+                        <a href="#researchPage3">Industry Research</a>
                     </li>
                 </ul>
             </section>
@@ -89,10 +89,8 @@ Demo App 2
             </section>
             <!--Footer information-->
             <footer>
-                <small>
                 <p>Courtney Ardis</p>
                 <p>AVF 1302</p>
-                </small>
             </footer>
         </div>
         <!--END Home page-->
@@ -127,11 +125,7 @@ Demo App 2
             <section id="geo">
                 <!--Back button-->
                 <input type="button" value="Back" onclick="history.back(-1)" />
-                <ul>
-                    <li><label for="city">City:</label><input type="text" id="city" /></li>
-                    <li><label for="state">State:</label><input type="text" id="state" /></li>
-                    <li><button type="button" id="getLocationBtn">Get Location</button></li>
-                </ul>
+                <button type="button" id="getLocationBtn">Get Location</button>
             </section>
         </div>
         <!--END Geolocation page-->
@@ -165,11 +159,11 @@ Demo App 2
         <!--END GitHub Jobs page-->
 
         <!--Research Page-->
-        <div data-role="page" id="researchPage">
+        <div data-role="page" id="researchPage1">
             <header>
                 <h1>Data Research, Project Intent</h1>
             </header>
-            <section>
+            <section class="research">
                 <!--Back button-->
                 <input type="button" value="Back" onclick="history.back(-1)" />
                 <p>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</p>
@@ -184,12 +178,57 @@ Demo App 2
                 <p>I&apos;ve learned to get the functionality of things working first and then work on the detailed styles or extra features later. I’ve also started drawing out on paper a rough sketch of how I want each application laid out.</p>
             </section>
         </div>
-        <!--END Research Page-->
+        <!--END Research Page 1-->
+
+        <!--Research Page 2-->
+        <div data-role="page" id="researchPage2">
+            <header>
+                <h1>Accessibility</h1>
+            </header>
+            <section class="research">
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" />
+                <p>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</p>
+                <p>Instead of using a section tag within a div, I could change it to just use the section tag. Also, to make it easier to tell that there are a list of links, I could put my a tags within li tags in an ordered or unordered list tag.</p>
+                <p>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</p>
+                <p>Screen Readers do not always read content in the way that it’s visually represented. I watched a video on YouTube about how searching for a video on YouTube is nearly impossible for the deaf or blind because the screen readers, such a Jaws or Voice Over, do not clearly state where the search bar is, how to turn up the volume, etc. They also talk over the video so this simple task becomes very frustrating.</p>
+                <p>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</p>
+                <p>All Mac OS and iOS devices since Mac OS 10.4 have Voice Over built in, which is specifically made for accessibility. Voice Over offers a way to browse webpages as they really are and it also allows for a user to set a sweet spot for certain spots on a webpage that is visited most often. The sweet spot will always be the first thing the Voice Over reads to make it easier and faster to get the information most wanted. Talking calculators were invented in the late 70s. It speaks the button’s functions and some can be used with or without a screen reader.</p>
+                <p>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</p>
+                <p>The LookTel Money Reader app is made for the visually impaired to be able to identify US currency by using the camera to take a picture of the bill. It can be found in the Apple App Store for $1.99. The Color Identifier app allows a user to take a picture of an object and then speaks the colors of the object. The colors can be read as basic colors or shades of colors, such as Forest Green, Plum, etc. It can be found in the Apple App Store for $1.99.</p>
+            </section>
+        </div>
+        <!--END Research Page 2-->
+
+        <!--Research Page 3-->
+        <div data-role="page" id="researchPage3">
+            <header>
+                <h1>Industry Research</h1>
+            </header>
+            <section class="research">
+                <!--Back button-->
+                <input type="button" value="Back" onclick="history.back(-1)" />
+                <p>What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</p>
+                <p>The top selling category in the U.S. is Games (Garun, 2012). Japan and Great Britain also download games the most ("Revealed – the”).</p>
+                <p>Based on your three answers above, what might you infer about each of the markets listed?</p>
+                <p>Each market is trying to appeal to younger people and/or people who like to play games. More often than not, people are on their devices to pass time. Games are the best way to do this because they are entertaining and engaging.</p>
+                <p>What are the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?</p>
+                <p>Japan cost $0.27 per mbps at 61 mbps bandwidth. United States cost $3.00 per mbps at 4.8 mbps bandwidth. Great Britain cost approximately $10.00 per mbps at 1.0 mbps bandwidth("Internet costs and," 2011). The more limits are decreased, the harder developers will have to work to make their apps require the least amount of upload and download usage.</p>
+                <p>And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</p>
+                <p>At this point in time, while all three markets are best selling games, I would want to develop a game or an application that would accompany a game. I would market it to U.S. and Great Britain.  After success in these markets, I would then target Japan. Also, I will keep up with industry trends in these markets and others so I can produce an app that the users are looking for at any particular time.</p>
+                <p>Resources: 
+                </br>Revealed – the uk’s most popular ipad app categories. (n.d.). Retrieved from http://madvertise.com/en/company/press/revealed-the-uk’s-most-popular-ipad-app-categories/
+                </br>Garun, N. (2012, 03 05). The top 10 best-selling iphone apps of all time. Retrieved from http://www.businessinsider.com/the-top-10-best-selling-iphone-apps-of-all-time-2012-3?op=1
+                </br>Internet costs and speed across the world. (2011, 02 26). Retrieved from http://www.nirmaltv.com/2011/02/26/compare-internet-cost-and-speed-across-the-world/
+                </p>
+            </section>
+        </div>
+        <!--END Research Page 3-->
 
         <!--jQuery-->
-        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="js/jquery-1.7.1.min.js"></script>
         <!--jQuery Mobile-->
-        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
         <!--Cordova-->
         <script type="text/javascript" src="cordova-2.3.0.js"></script>
         <!--Javascript file-->
