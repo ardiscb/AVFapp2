@@ -12,31 +12,11 @@ var onDeviceReady = function(){
     $("#network").click(function() {
         connectionStatus();
     });
-    $("#getMapBtn").click(function(){
-        console.log("getmap click");
-        navigator.geolocation.getCurrentPosition(onSuccessMap, errorMap);
-    });
     onReady();
 }
 
 //Cordova ready
 document.addEventListener("deviceready", onDeviceReady, false);
-
-//Map
-var onSuccessMap = function(data){
-    console.log("in success map");
-    var location = data.location;
-    location.replace(' ', '+');
-    console.log(location);
-    $("#map").append(
-        "<img width='100%' height='100%' src='http://maps.googleapis.com/maps/api/staticmap?center=" + location + "&zoom=10&size=600x300&maptype=roadmap&sensor=false'/>" 
-    );
-    console.log("after append map");
-}
-var errorMap = function(error){
-    alert("Map Error Message: " + error.message + " Error Code: " + error.code);
-}
-//END map
 
 //Geolocation
 var onSuccess = function(position){
@@ -145,14 +125,24 @@ var onReady = function(position){
                         "<li>" +
                         "<p>Position Title: " + data[i].title + "</p>" +                
                         "<p>Location: " + data[i].location + "</p>" +
-                        "<a href='#mapPage' id='MapBtn'>Map</a>" +              
+                        "<a href='#mapPage' id='mapBtn'>Map</a>" +              
                         "<p>Company: " + data[i].company + "</p>" + 
                         // "<a href=''>" + data[i].company_url + "</a>" +             
                         "<p>Job Description: " + data[i].description + "</p>" +
                         "<p>How to Apply:" + data[i].how_to_apply + "</p>" +               
                         "</li><hr />"           
-                    ).appendTo("#githubJobs");     
-                }   
+                    ).appendTo("#githubJobs");
+                    var location = data[i].location.replace(/\s/g,"");
+                    console.log(data[i].location);   
+                }  
+                $("#mapBtn").click(function(){
+                        console.log("in map button click");
+                        $("#map").append(
+                            "<img width='100%' height='100%' src='http://maps.googleapis.com/maps/api/staticmap?center=" + location + "&zoom=14&size=600x300&maptype=roadmap&sensor=false'/>" 
+                        );
+                        console.log(data[i].location);  
+                        console.log("after map append");
+                });
             },
             error: function(status, results){
                 console.log(status, results);

@@ -21,16 +21,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //Geolocation
 var onSuccess = function(position){
     console.log("in success");
-    var city = $("#city").attr("value");
-    var state = $("#state").attr("value");
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     var accuracy = position.coords.accuracy;
     console.log(latitude);
     console.log(longitude);
-    // $("#geo img").remove(); 
     $("#geo").append(
-        "<img width='100%' height='100%' src='http://maps.googleapis.com/maps/api/staticmap?center=" + city + "," + state + "&zoom=10&size=600x300&maptype=roadmap&markers=color:green|" + latitude + "," + longitude + "&sensor=false'/>" + 
+        "<img width='100%' height='100%' src='http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=10&size=600x300&maptype=roadmap&markers=color:green|" + latitude + "," + longitude + "&sensor=false'/>" + 
         '<p>Latitude: ' + latitude + '</p>' +
         '<p>Longitude: ' + longitude + '</p>' +
         '<p>Accuracy: ' + accuracy + 'm</p>'
@@ -40,6 +37,8 @@ var onSuccess = function(position){
 var error = function(error){
     alert("Geolocation Error Message: " + error.message + " Error Code: " + error.code);
 }
+//END geolocation
+
 //onReady function - does everything else
 var onReady = function(position){
     $('#home').on('pageinit', function(){
@@ -77,9 +76,15 @@ var onReady = function(position){
     });
     
     //Twitter Page
-    $('#twitterPage').on('pageinit', function(networkState, states){
+    $('#twitterPage').on('pageinit', function(){
         console.log("I've gotten to the twitter page");
-        if(states[networkState] != Connection.UNKNOWN || states[networkState] != Connection.NONE){
+        var networkState = navigator.network.connection.type;
+        console.log(networkState);
+        if((networkState === 'none') || (networkState === 'unknown')){
+            console.log("in if = unknown or no network");
+            alert("Please connect to a network and try again. Example: Wi-Fi");
+        }else{
+            console.log("in else");
             console.log("Starting JSON");
             $.ajax({
             type: "GET",
@@ -102,8 +107,6 @@ var onReady = function(position){
                 console.log(status, results);
             }
             });
-        }else{
-            alert("Please connect to a network and try again. Example: Wi-Fi");
         }
     }); 
     
@@ -121,14 +124,25 @@ var onReady = function(position){
                     $("" +
                         "<li>" +
                         "<p>Position Title: " + data[i].title + "</p>" +                
-                        "<p>Location: " + data[i].location + "</p>" +              
+                        "<p>Location: " + data[i].location + "</p>" +
+                        "<a href='#mapPage' id='mapBtn'>Map</a>" +              
                         "<p>Company: " + data[i].company + "</p>" + 
                         // "<a href=''>" + data[i].company_url + "</a>" +             
                         "<p>Job Description: " + data[i].description + "</p>" +
                         "<p>How to Apply:" + data[i].how_to_apply + "</p>" +               
                         "</li><hr />"           
-                    ).appendTo("#githubJobs");     
-                }   
+                    ).appendTo("#githubJobs");
+                    var location = data[i].location.replace(/\s/g,"");
+                    console.log(data[i].location);   
+                }  
+                $("#mapBtn").click(function(){
+                        console.log("in map button click");
+                        $("#map").append(
+                            "<img width='100%' height='100%' src='http://maps.googleapis.com/maps/api/staticmap?center=" + location + "&zoom=14&size=600x300&maptype=roadmap&sensor=false'/>" 
+                        );
+                        console.log(data[i].location);  
+                        console.log("after map append");
+                });
             },
             error: function(status, results){
                 console.log(status, results);
@@ -166,7 +180,7 @@ var connectionStatus = function() {
     // Error in phonegap 2.2.0
     // Descripton states that using this will result in the correct data type for the emulator
     var networkState = navigator.network.connection.type;
-
+    console.log(networkState);
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
