@@ -7,7 +7,7 @@ Demo App 2
     margin:0;  
     padding:0;  
 }  
-#home, #researchPage1, #researchPage2, #researchPage3, #twitterPage, #githubPage, #contactsPage, #geoPage{  
+#home, #researchPage1, #researchPage2, #researchPage3, #twitterPage, #githubPage, #contactsPage, #geoPage, #mapPage{  
     background: url("../img/corkboard.jpg");
     background-repeat: repeat;
     font-family:arial,sans-serif;  
@@ -124,7 +124,7 @@ section#research{
     text-align: left;
 }
 /*style twitter, research and github page opaque overlayed background*/
-#twitterPage section, section.research, #githubPage section, #contactsPage section, #geo{
+#twitterPage section, section.research, #githubPage section, #contactsPage section, #geo, #map{
     margin: 20px;
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.5);
@@ -150,10 +150,11 @@ img{
     max-width: 100%;
 }
 /*align footer text*/
-footer small p{
+footer p{
     color:#404040;
     font-weight: bold;
     text-align: center;
+    font-size: 10pt;
 }
 
 /*Landscape view*/
